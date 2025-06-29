@@ -1,6 +1,6 @@
-package com.amazon_El8alaba.model;
+package com.ProductManager.model;
 
-import com.amazon_El8alaba.entity.ProductDetailsEntity;
+import com.ProductManager.entity.ProductDetailsEntity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
