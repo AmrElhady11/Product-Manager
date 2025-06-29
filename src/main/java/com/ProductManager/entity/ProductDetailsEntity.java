@@ -1,4 +1,4 @@
-package com.amazon_El8alaba.entity;
+package com.ProductManager.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
