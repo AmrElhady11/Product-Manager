@@ -1,8 +1,8 @@
-package com.amazon_El8alaba.model;
+package com.ProductManager.model;
 
-import com.amazon_El8alaba.entity.ProductEntity;
-import jakarta.persistence.*;
+import com.ProductManager.entity.ProductEntity;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,6 +10,7 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class ProductDetails {
     private Integer id;
     private ProductEntity productId;
@@ -18,4 +19,5 @@ public class ProductDetails {
     private String manufacturer;
     private Double price;
     private Boolean available ;
+
 }
