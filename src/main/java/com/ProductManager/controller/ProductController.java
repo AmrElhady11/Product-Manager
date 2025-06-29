@@ -1,9 +1,8 @@
-package com.amazon_El8alaba.controller;
+package com.ProductManager.controller;
 
-import com.amazon_El8alaba.model.Product;
-import com.amazon_El8alaba.model.ProductDetails;
-import com.amazon_El8alaba.service.ProductService;
-import jakarta.servlet.http.HttpSession;
+import com.ProductManager.model.Product;
+import com.ProductManager.model.ProductDetails;
+import com.ProductManager.service.ProductService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,7 +28,7 @@ public class ProductController {
     }
     @PostMapping("/showProductDetails")
     public String showProductDetails(@RequestParam int id,Model model){
-       ProductDetails theProduct = productService.getProductDetails(id);
+       ProductDetails theProduct = productService.getProductDetailsByProductId(id);
        model.addAttribute("productModel",theProduct);
         return "viewDetails";
     }
