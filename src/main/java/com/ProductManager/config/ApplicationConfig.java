@@ -1,4 +1,4 @@
-package com.amazon_El8alaba.config;
+package com.ProductManager.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
