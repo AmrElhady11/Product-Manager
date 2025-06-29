@@ -1,9 +1,7 @@
-package com.amazon_El8alaba.service;
+package com.ProductManager.service;
 
-import com.amazon_El8alaba.dao.ProductRepository;
-import com.amazon_El8alaba.model.Product;
-import com.amazon_El8alaba.model.ProductDetails;
-import org.springframework.stereotype.Service;
+import com.ProductManager.model.Product;
+import com.ProductManager.model.ProductDetails;
 
 import java.util.List;
 
@@ -14,5 +12,5 @@ public interface ProductService {
  boolean updateProduct(ProductDetails productDetails);
  boolean deleteProduct(int id);
  ProductDetails getProductDetails(int id);
-
+ ProductDetails getProductDetailsByProductId(int ProductId);
 }
