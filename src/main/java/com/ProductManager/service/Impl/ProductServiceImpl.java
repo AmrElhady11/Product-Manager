@@ -1,11 +1,11 @@
-package com.amazon_El8alaba.service.Impl;
+package com.ProductManager.service.Impl;
 
-import com.amazon_El8alaba.dao.ProductRepository;
-import com.amazon_El8alaba.entity.ProductDetailsEntity;
-import com.amazon_El8alaba.entity.ProductEntity;
-import com.amazon_El8alaba.model.Product;
-import com.amazon_El8alaba.model.ProductDetails;
-import com.amazon_El8alaba.service.ProductService;
+import com.ProductManager.dao.ProductRepository;
+import com.ProductManager.entity.ProductDetailsEntity;
+import com.ProductManager.entity.ProductEntity;
+import com.ProductManager.model.Product;
+import com.ProductManager.model.ProductDetails;
+import com.ProductManager.service.ProductService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -68,6 +68,12 @@ public class ProductServiceImpl implements ProductService {
         ProductDetailsEntity theProduct = productRepository.findProductDetailsById(id);
 
         return mapToProductDetails(theProduct);
+    }
+    @Override
+    public ProductDetails getProductDetailsByProductId(int ProductId){
+        ProductDetailsEntity theProduct = productRepository.findProductDetailsByProductId(ProductId);
+        return mapToProductDetails(theProduct);
+
     }
 
     private ProductDetailsEntity mapToProductDetailsEntity(ProductDetails productDetails) {
