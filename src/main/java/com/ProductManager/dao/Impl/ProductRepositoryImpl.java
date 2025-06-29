@@ -1,10 +1,9 @@
-package com.amazon_El8alaba.dao.Impl;
+package com.ProductManager.dao.Impl;
 
-import com.amazon_El8alaba.dao.ProductRepository;
-import com.amazon_El8alaba.entity.ProductDetailsEntity;
-import com.amazon_El8alaba.entity.ProductEntity;
+import com.ProductManager.dao.ProductRepository;
+import com.ProductManager.entity.ProductDetailsEntity;
+import com.ProductManager.entity.ProductEntity;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +26,10 @@ public class ProductRepositoryImpl implements ProductRepository {
        productDetails.setProductId(product);
        entityManager.persist(productDetails);
         return product;
+    }
+    @Override
+   public void save (ProductEntity product){
+       entityManager.persist(product);
     }
 
     @Override
@@ -70,5 +73,12 @@ public class ProductRepositoryImpl implements ProductRepository {
     public ProductDetailsEntity findProductDetailsById(int id) {
         return entityManager.find(ProductDetailsEntity.class,id);
 
+    }
+    @Override
+   public ProductDetailsEntity findProductDetailsByProductId(int productId){
+
+       return (ProductDetailsEntity) entityManager.createQuery("from ProductDetailsEntity p where p.productId.id = :productId",ProductDetailsEntity.class)
+               .setParameter("productId",productId)
+               .getSingleResult();
     }
 }
