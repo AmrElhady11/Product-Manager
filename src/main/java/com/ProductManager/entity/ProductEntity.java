@@ -1,11 +1,9 @@
-package com.amazon_El8alaba.entity;
+package com.ProductManager.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "product")
@@ -18,6 +16,8 @@ public class ProductEntity {
     private Integer id;
     @Column
     private String name;
+
+
 
 
 }
